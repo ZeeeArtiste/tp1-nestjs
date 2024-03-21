@@ -12,7 +12,6 @@ export class AuthService {
 
     ) { }
 
-    // Method to generate a JWT token for a user
     async login(loginDto: LoginDto): Promise<string> {
         const { email, password } = loginDto;
         const user = await this.usersService.findOneByEmail(email);
@@ -30,7 +29,6 @@ export class AuthService {
         return await this.jwtService.signAsync(payload, { secret: jwtConstants.secret });
     }
 
-    // Method to validate a JWT token and return the associated user data
     async validateToken(token: string): Promise<any> {
         try {
             const decoded = this.jwtService.verify(token, { secret: jwtConstants.secret });
