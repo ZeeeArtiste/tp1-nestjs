@@ -2,14 +2,14 @@
 
 ## Prérequis
 
--Nest (et ses prérequis)
--Serveur mysql avec les paramètres suivants, sinon à adapter:
-type: 'mariadb',
-host: 'localhost',
-port: 3306,
-username: 'root',
-password: '',
-database: 'tp1nest'
+- Nest (et ses prérequis)
+- Serveur mysql avec les paramètres suivants, sinon à adapter:
+  type: 'mariadb',
+  host: 'localhost',
+  port: 3306,
+  username: 'root',
+  password: '',
+  database: 'tp1nest'
 
 ## Présentation
 
