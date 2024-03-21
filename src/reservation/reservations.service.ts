@@ -27,6 +27,7 @@ export class ReservationsService {
         reservation.reservationDate = createReservationDto.reservationDate;
 
         const user = await this.userRepo.findOne({ where: { id: createReservationDto.userId } })
+
         if (!user) {
             throw new NotFoundException('User not found');
         }

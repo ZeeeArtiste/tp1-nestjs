@@ -4,6 +4,7 @@ import { LoginDto } from 'src/dto/login.dto';
 import { UserService } from 'src/user/user.service';
 import { jwtConstants } from './constant';
 import { compare } from 'bcrypt';
+import { User } from 'src/entities/user.entity';
 
 @Injectable()
 export class AuthService {
@@ -29,13 +30,16 @@ export class AuthService {
         return await this.jwtService.signAsync(payload, { secret: jwtConstants.secret });
     }
 
-    async validateToken(token: string): Promise<any> {
+    async decodeToken(token: string): Promise<User> {
         try {
             const decoded = this.jwtService.verify(token, { secret: jwtConstants.secret });
             if (!decoded) {
                 throw new UnauthorizedException('Invalid token');
             }
-            return decoded;
+            const user = new User();
+            user.id = decoded.sub;
+            user.email = decoded.username;
+            return user;
         } catch (e) {
             throw new UnauthorizedException('Invalid token', e.message);
         }

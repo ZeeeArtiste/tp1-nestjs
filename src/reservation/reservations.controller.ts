@@ -14,7 +14,8 @@ export class ReservationsController {
     @Post()
     async create(@Body() createReservationDto: CreateReservationDto, @Req() req: Request) {
         const user = req['user'];
-        createReservationDto.userId = user.sub as number;
+        createReservationDto.userId = user.id as number;
+
         return this.reservationsService.create(createReservationDto);
     }
 }

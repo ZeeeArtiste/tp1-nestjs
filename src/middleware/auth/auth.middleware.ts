@@ -20,7 +20,7 @@ export class AuthMiddleware implements NestMiddleware {
         }
 
         try {
-            const user = await this.authService.validateToken(token);
+            const user = await this.authService.decodeToken(token);
             if (!user) {
                 throw new UnauthorizedException('Invalid token or token expired.');
             }
