@@ -18,7 +18,7 @@ Il s'agit d'une mini api de réservation d'événements, elle permet :
 - de se créer un compte
 - gérer l'authentification via un token et un middleware
 - de créer un événement
-- de réserver un événement (route privée, la seule pour faciliter les test)
+- de réserver un événement (route privée, la seule pour faciliter les test, précisez "Bearer" devant le token dans l'entête "Authorization")
 
 ## Fonctionnement
 
