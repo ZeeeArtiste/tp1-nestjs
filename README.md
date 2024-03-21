@@ -1,5 +1,16 @@
 # TP NEST JS
 
+## Prérequis
+
+-Nest (et ses prérequis)
+-Serveur mysql avec les paramètres suivants, sinon à adapter:
+type: 'mariadb',
+host: 'localhost',
+port: 3306,
+username: 'root',
+password: '',
+database: 'tp1nest'
+
 ## Présentation
 
 Il s'agit d'une mini api de réservation d'événements, elle permet :
